@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class samllestAndLargestElement {
+public class SamllestAndLargestElement {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Number of elements in the Array");
