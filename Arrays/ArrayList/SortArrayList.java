@@ -16,7 +16,7 @@ public class SortArrayList {
 //        System.out.println("Ascending Order Sorting " + l);
 //        Collections.sort(l, Collections.reverseOrder());
 //        System.out.println("Descending Order Soting " + l);
-        
+
         ArrayList<String> l1 = new ArrayList<>();
         l1.add("Hello");
         l1.add("world");
