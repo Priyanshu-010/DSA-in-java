@@ -17,10 +17,33 @@ public class Basics {
         c.next = d;
 
         Node temp = a;
-
+// We should always use a temporary node or a function (beacause it's pass by value)
+// for printing a linked lists so the head doesn't change
         while(temp != null){  // Printing Linked Lists
             System.out.print(temp.data + " ");
             temp = temp.next;
         }
+        System.out.println();
+        display(a);
+        System.out.println();
+        displayRecursively(a);
+    }
+    public static void display(Node head){
+        while(head != null){
+            System.out.print(head.data + " ");
+            head = head.next;
+        }
+    }
+
+    // Printng linked lists recursively
+
+    public static void displayRecursively(Node head){
+        if(head == null) return;
+        System.out.print(head.data + " ");
+        displayRecursively(head.next);
+
+        // This will print the linked list in reverse
+//        displayRecursively(head.next);
+//        System.out.print(head.data + " ");
     }
 }
