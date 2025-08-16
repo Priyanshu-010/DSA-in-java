@@ -12,6 +12,20 @@ public class Implementation {
         Node head;
         Node tail;
 
+        void insertAt(int idx, int val){
+            Node t = new Node(val);
+            Node temp = head;
+            if(idx  == size()){
+                insertAtEnd(val);
+                return;
+            }
+            for (int i = 1; i <= idx -1; i++) {
+                temp = temp.next;
+            }
+            t.next = temp.next;
+            temp.next = t;
+        }
+
         void insertAtEnd(int x){
             Node temp = new Node(x);
             if(head == null){ // empty list
@@ -43,15 +57,29 @@ public class Implementation {
             }
             System.out.println();
         }
+        int size(){
+            Node temp = head;
+            int len = 0;
+            while(head != null){
+                len++;
+                head = head.next;
+            }
+            return len;
+        }
     }
     public static void main(String[] args) {
         Linkedlist ll = new Linkedlist();
         ll.insertAtEnd(5);
         ll.insertAtEnd(7);
+        ll.insertAtEnd(6);
         ll.display();
         ll.insertAtStart(2);
         ll.insertAtStart(8);
         ll.insertAtStart(19);
         ll.display();
+
+        ll.insertAt(5,1);
+        ll.display();
+        System.out.print(ll.tail.data);
     }
 }
