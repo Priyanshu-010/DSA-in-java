@@ -33,19 +33,24 @@ public class deleteNthNodeFromLast {
 
     // Optimized Soln which works even if n is at tail coz previous soln will not work if n is at tail
 
-    public static void deleteNthNode(Node head, int n){
+    public static Node deleteNthNode(Node head, int n){
         Node slow = head;
         Node fast = head;
         for (int i = 1; i <= n; i++) {
             fast = fast.next;
         }
 
+        if(fast==null){ // if the nth node which we have to delete is head
+            head= head.next;  // deleting head
+            return head;
+        }
         while(fast.next != null){
             slow = slow.next;
             fast = fast.next;
         }
 
         slow.next = slow.next.next;
+        return head;
     }
 
     public static void main(String[] args) {
@@ -62,7 +67,7 @@ public class deleteNthNodeFromLast {
 //        ans.data = ans.next.data;
 //        ans.next = ans.next.next;
 
-        deleteNthNode(a, 1);
+        a = deleteNthNode(a, 3);
 
         display(a);
 
