@@ -24,7 +24,7 @@ public class NthNodeFromLast {
         return temp;
     }
 
-    public static Node optimizedNthNode(Node head, int n){
+    public static Node nthNodeInOneTraversal(Node head, int n){ // finding nth node in one traversal unlike in previous one where first we find the length/size of the linked list and then find the nth Node.
         Node slow = head;
         Node fast = head;
 
@@ -52,7 +52,7 @@ public class NthNodeFromLast {
 
         Node ans = nthNode(a, 2);
         System.out.println(ans.data);
-        Node optAns = optimizedNthNode(a, 2);
+        Node optAns = nthNodeInOneTraversal(a, 2);
         System.out.println(optAns.data);
     }
 }
