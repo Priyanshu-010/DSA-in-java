@@ -17,8 +17,11 @@ public class ReverseLinkedList {
         b.next = c;
         c.next = d;
         display(a);
-        Node ans = reverse(a);
-        display(ans);
+//        Node ans = reverse(a);
+//        display(ans);
+        Node ans1 = reverseIteratively(a);
+        display(ans1);
+
     }
 
     public static Node reverse(Node head){
@@ -32,6 +35,19 @@ public class ReverseLinkedList {
         return newHead;
     }
 
+    public static Node reverseIteratively(Node head){
+        Node curr = head;
+        Node prev = null;
+        Node agla = null;
+
+        while(curr != null){
+            agla = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = agla;
+        }
+        return prev;
+    }
     public static void display(Node head){
         Node temp = head;
         while(temp != null){
