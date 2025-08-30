@@ -27,7 +27,8 @@ public class Basics {
         d.prev = c;
         e.prev = d;
 //        display(a);
-        displayFromTail(e);
+//        displayFromTail(e);
+        displayFromAnyNode(c);
     }
 
     public static void displayFromTail(Node tail){
@@ -35,6 +36,20 @@ public class Basics {
         while(temp!=null){
             System.out.print(temp.val+ " ");
             temp = temp.prev;
+        }
+        System.out.println();
+    }
+
+    public static void displayFromAnyNode(Node ran){
+        Node temp = ran;
+        //Taking temp at head
+        while(temp.prev!=null){
+            temp = temp.prev;
+        }
+
+        while(temp!=null){
+            System.out.print(temp.val+ " ");
+            temp = temp.next;
         }
         System.out.println();
     }
