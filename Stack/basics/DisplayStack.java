@@ -3,6 +3,16 @@ package basics;
 import java.util.Stack;
 
 public class DisplayStack {
+
+    public static void displayReverseRec(Stack<Integer> st){
+        if(st.size() == 0){
+            return;
+        }
+        int top = st.pop();
+        System.out.print(top+ " ");
+        displayReverseRec(st);
+        st.push(top);
+    }
     public static void main(String[] args) {
         Stack<Integer> st = new Stack<>();
         st.push(1);
@@ -23,5 +33,7 @@ public class DisplayStack {
             st.push(x);
             rt.pop();
         }
+        System.out.println();
+        displayReverseRec(st);
     }
 }
