@@ -5,14 +5,21 @@ import java.util.Stack;
 public class DisplayStack {
 
     public static void displayReverseRec(Stack<Integer> st){
-        if(st.size() == 0){
-            return;
-        }
+        if(st.size() == 0) return;
         int top = st.pop();
         System.out.print(top+ " ");
         displayReverseRec(st);
         st.push(top);
     }
+
+    public static void displayRec(Stack<Integer> st){
+        if(st.size() == 0) return;
+        int top = st.pop();
+        displayRec(st);
+        System.out.print(top+ " ");
+        st.push(top);
+    }
+
     public static void main(String[] args) {
         Stack<Integer> st = new Stack<>();
         st.push(1);
@@ -35,5 +42,7 @@ public class DisplayStack {
         }
         System.out.println();
         displayReverseRec(st);
+        System.out.println();
+        displayRec(st);
     }
 }
