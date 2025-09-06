@@ -27,7 +27,7 @@ public class ArrayImplementation {
             if(idx == 0){
                 System.out.println("Stack is Empty!");
                 return -1;
-            }
+            }   
             int top = arr[idx-1];
             arr[idx-1] = 0;
             idx--;
