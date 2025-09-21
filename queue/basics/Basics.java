@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class Basics {
     public static void main(String[] args) {
-        Queue<Integer> q = new LinkedList<>();
+        Queue<Integer> q = new LinkedList<>(); // We can write LinkedList or ArrayDeque here
         q.add(2);
         q.add(1);
         q.add(7);
